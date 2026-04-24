@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import styles from '../styles/Home.module.css'
+import styles from './page.module.css'
 
 export default function Home() {
   const [input, setInput] = useState('')
@@ -36,7 +38,7 @@ export default function Home() {
     }
   }
 
-  const renderTree = (tree, level = 0, isLast = true) => {
+  const renderTree = (tree, level = 0) => {
     const keys = Object.keys(tree)
     return (
       <>
@@ -56,7 +58,7 @@ export default function Home() {
               </div>
               {hasChildren && (
                 <div style={{ marginLeft: level > 0 ? '20px' : '0' }}>
-                  {renderTree(tree[key], level + 1, isLastChild)}
+                  {renderTree(tree[key], level + 1)}
                 </div>
               )}
             </div>
