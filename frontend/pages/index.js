@@ -15,7 +15,7 @@ export default function Home() {
     try {
       const dataArray = input.split(',').map(item => item.trim()).filter(item => item !== '')
       
-      const res = await fetch('http://localhost:3000/bfhl', {
+      const res = await fetch('https://bajaj-intern-api.onrender.com/bfhl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
